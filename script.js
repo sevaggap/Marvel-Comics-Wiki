@@ -21,6 +21,7 @@ function getcharacter(){
     })
     .then (function (data) {
         console.log(data);
+        console.log("getting character");
         let characterid = data.data.results[0].id;
         let img = data.data.results[0].thumbnail.path
         characterimgEl.setAttribute("src", img + ".jpg");
