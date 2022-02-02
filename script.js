@@ -45,11 +45,11 @@ function getcharacter(){
         console.log(data);
         console.log("getting character");
         let characterid = data.data.results[0].id;
-        //let img = data.data.results[0].thumbnail.path
-        //characterimgEl.setAttribute("src", img + ".jpg");
+        let charactername = data.data.results[0].name
 
         console.log(characterid);
         getcomics(characterid);
+        searchwiki(charactername);
     }
     )
 }
@@ -78,11 +78,14 @@ function getcomics (characterid) {
         comicimageEl8.setAttribute("src", data.data.results[7].thumbnail.path + ".jpg");
         comicimageEl9.setAttribute("src", data.data.results[8].thumbnail.path + ".jpg");
         comicimageEl10.setAttribute("src", data.data.results[9].thumbnail.path + ".jpg");
+
+        return data;
     })
 }
 
-function searchwiki() {
-    let input = testinputEl.value;
+function searchwiki(charactername) {
+    let input = charactername;
+
     console.log(input);
     
      let url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + input + "&format=json" + "&origin=*";
@@ -116,3 +119,4 @@ function display(data,length) {
 }
 
 testbuttonEl.addEventListener("click",getcharacter);
+console.log(Input.value.replace(/\s/g, '_'));
