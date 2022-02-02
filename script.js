@@ -1,8 +1,30 @@
 let bodyEl = document.getElementById('test');
 let testinputEl = document.getElementById('test-input');
 let testbuttonEl = document.getElementById('test-button');
+let comicsEl = document.getElementById('comics');
 
 let characterimgEl= document.createElement("img");
+let comicimageEl1 = document.createElement("img");
+let comicimageEl2 = document.createElement("img");
+let comicimageEl3 = document.createElement("img");
+let comicimageEl4 = document.createElement("img");
+let comicimageEl5 = document.createElement("img");
+let comicimageEl6 = document.createElement("img");
+let comicimageEl7 = document.createElement("img");
+let comicimageEl8 = document.createElement("img");
+let comicimageEl9 = document.createElement("img");
+let comicimageEl10 = document.createElement("img");
+
+comicsEl.appendChild(comicimageEl1);
+comicsEl.appendChild(comicimageEl2);
+comicsEl.appendChild(comicimageEl3);
+comicsEl.appendChild(comicimageEl4);
+comicsEl.appendChild(comicimageEl5);
+comicsEl.appendChild(comicimageEl6);
+comicsEl.appendChild(comicimageEl7);
+comicsEl.appendChild(comicimageEl8);
+comicsEl.appendChild(comicimageEl9);
+comicsEl.appendChild(comicimageEl10);
 
 bodyEl.appendChild(characterimgEl);
 
@@ -23,11 +45,10 @@ function getcharacter(){
         console.log(data);
         console.log("getting character");
         let characterid = data.data.results[0].id;
-        let img = data.data.results[0].thumbnail.path
-        characterimgEl.setAttribute("src", img + ".jpg");
+        //let img = data.data.results[0].thumbnail.path
+        //characterimgEl.setAttribute("src", img + ".jpg");
 
         console.log(characterid);
-        searchwiki(input);
         getcomics(characterid);
     }
     )
@@ -46,6 +67,17 @@ function getcomics (characterid) {
     })
     .then (function (data) {
         console.log(data);
+        comicimageEl1.setAttribute("src", data.data.results[0].thumbnail.path + ".jpg");
+        comicimageEl1.setAttribute("style", "height: 20%");
+        comicimageEl2.setAttribute("src", data.data.results[1].thumbnail.path + ".jpg");
+        comicimageEl3.setAttribute("src", data.data.results[2].thumbnail.path + ".jpg");
+        comicimageEl4.setAttribute("src", data.data.results[3].thumbnail.path + ".jpg");
+        comicimageEl5.setAttribute("src", data.data.results[4].thumbnail.path + ".jpg");
+        comicimageEl6.setAttribute("src", data.data.results[5].thumbnail.path + ".jpg");
+        comicimageEl7.setAttribute("src", data.data.results[6].thumbnail.path + ".jpg");
+        comicimageEl8.setAttribute("src", data.data.results[7].thumbnail.path + ".jpg");
+        comicimageEl9.setAttribute("src", data.data.results[8].thumbnail.path + ".jpg");
+        comicimageEl10.setAttribute("src", data.data.results[9].thumbnail.path + ".jpg");
     })
 }
 
