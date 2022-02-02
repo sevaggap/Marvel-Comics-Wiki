@@ -1,1 +1,0 @@
-# UofT-SCS-Coding-Bootcamp-Project-1-Interactive-Front-End-Application
