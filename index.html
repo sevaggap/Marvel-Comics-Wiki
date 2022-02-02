@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome link-->
+    <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- My style sheet -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Marvel Comics</title>
+</head>
+<body>
+    <header class="navbar">
+        <section class="navbar-section">
+          <a href="..." class="navbar-brand mr-2">Marvel Wikipedia</a>
+          <a href="..." class="btn btn-link">Marvel API</a>
+          <a href="..." class="btn btn-link">Random Marvel Article!</a>
+        </section>
+        <section class="navbar-section">
+
+        </section>
+      </header>
+
+    <!-- Main heading -->
+    <div class="bg-dark pt-2 pb-2"> 
+        <div class="container">
+            <h1 class="text-center text-white">Marvel Search engine</h1>
+        </div>
+    </div>
+    <!-- End Main heading -->
+
+    <!-- Start container -->
+    <div class="container-fluid"> 
+
+      
+        <div class="row"> 
+
+          
+            <div class="col-lg-3 bg-light pt-3 pb-3"> 
+
+                <h5>Input name of a Marvel Hero</h5>
+
+                <!-- Start input group -->
+                <div class="input-group mb-3"> 
+                    <input id="searchinput" type="text" class="form-control" placeholder="Hero name..." class="input-group-append">
+                    <button id="searchBtn" class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-search"></i></button>
+                </div>
+                <!-- End input group -->   
+                Search History
+                <!-- Start card -->
+                <div class="card"> 
+                    <ul class="list-group list-group-flush list"><link>
+                    </ul>
+                   
+                </div> 
+            
+           
+            </div> 
+           
+
+      
+            <div class="loading-col-lg-9"> 
+                <div id="comicinfo" class="mt-4">
+                   
+                   
+                </div>
+                <div class="col-lg-10"> 
+                    <div id="comicpics" class="mt-5">
+            </div> 
+        </div></div>
+        </div> 
+        
+
+
+      
+    </div> 
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
