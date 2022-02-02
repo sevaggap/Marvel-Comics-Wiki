@@ -65,8 +65,8 @@ function getcomics (characterid) {
     })
     .then (function (data) {
         console.log(data);
+        
         comicimageEl1.setAttribute("src", data.data.results[0].thumbnail.path + ".jpg");
-        comicimageEl1.setAttribute("style", "height: 20%");
         comicimageEl2.setAttribute("src", data.data.results[1].thumbnail.path + ".jpg");
         comicimageEl3.setAttribute("src", data.data.results[2].thumbnail.path + ".jpg");
         comicimageEl4.setAttribute("src", data.data.results[3].thumbnail.path + ".jpg");
@@ -77,6 +77,11 @@ function getcomics (characterid) {
         comicimageEl9.setAttribute("src", data.data.results[8].thumbnail.path + ".jpg");
         comicimageEl10.setAttribute("src", data.data.results[9].thumbnail.path + ".jpg");
 
+        for (i=0; i<10; i++ ) {
+            if(data.data.results[i].description) {
+                console.log(data.data.results[i].description);
+            }
+        }
         return data;
     })
 }
@@ -111,8 +116,8 @@ function display(data,length) {
         let p1 = document.createElement('p');
         h1.textContent= data.query.search[i].title;
         p1.textContent= data.query.search[i].snippet
-        bodyEl.appendChild(h1);
-        bodyEl.appendChild(p1);
+        comicsEl.appendChild(h1);
+        comicsEl.appendChild(p1);
     }
 }
 
@@ -120,4 +125,4 @@ function display(data,length) {
 
 buttonEl.addEventListener("click",getcharacter);
 
-console.log(Input.value.replace(/\s/g, '_'));
+//console.log(Input.value.replace(/\s/g, '_'));
