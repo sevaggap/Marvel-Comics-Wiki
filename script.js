@@ -26,7 +26,7 @@ comicsEl.appendChild(comicimageEl9);
 comicsEl.appendChild(comicimageEl10);
 
 
-console.log("hi");
+console.log("code is working");
 
 function getcharacter(){
     let input = inputEl.value;
