@@ -1,7 +1,6 @@
-let bodyEl = document.getElementById('test');
-let testinputEl = document.getElementById('test-input');
-let testbuttonEl = document.getElementById('test-button');
-let comicsEl = document.getElementById('comics');
+let inputEl = document.getElementById('searchinput');
+let buttonEl = document.getElementById('searchBtn');
+let comicsEl = document.getElementById('comicpics');
 
 let characterimgEl= document.createElement("img");
 let comicimageEl1 = document.createElement("img");
@@ -26,12 +25,11 @@ comicsEl.appendChild(comicimageEl8);
 comicsEl.appendChild(comicimageEl9);
 comicsEl.appendChild(comicimageEl10);
 
-bodyEl.appendChild(characterimgEl);
 
 console.log("code is working");
 
 function getcharacter(){
-    let input = testinputEl.value;
+    let input = inputEl.value;
     let url = "https://gateway.marvel.com/v1/public/characters?name=" + input + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
 
     fetch(url)
@@ -67,8 +65,8 @@ function getcomics (characterid) {
     })
     .then (function (data) {
         console.log(data);
+        
         comicimageEl1.setAttribute("src", data.data.results[0].thumbnail.path + ".jpg");
-        comicimageEl1.setAttribute("style", "height: 20%");
         comicimageEl2.setAttribute("src", data.data.results[1].thumbnail.path + ".jpg");
         comicimageEl3.setAttribute("src", data.data.results[2].thumbnail.path + ".jpg");
         comicimageEl4.setAttribute("src", data.data.results[3].thumbnail.path + ".jpg");
@@ -79,6 +77,11 @@ function getcomics (characterid) {
         comicimageEl9.setAttribute("src", data.data.results[8].thumbnail.path + ".jpg");
         comicimageEl10.setAttribute("src", data.data.results[9].thumbnail.path + ".jpg");
 
+        for (i=0; i<10; i++ ) {
+            if(data.data.results[i].description) {
+                console.log(data.data.results[i].description);
+            }
+        }
         return data;
     })
 }
@@ -113,10 +116,13 @@ function display(data,length) {
         let p1 = document.createElement('p');
         h1.textContent= data.query.search[i].title;
         p1.textContent= data.query.search[i].snippet
-        bodyEl.appendChild(h1);
-        bodyEl.appendChild(p1);
+        comicsEl.appendChild(h1);
+        comicsEl.appendChild(p1);
     }
 }
 
-testbuttonEl.addEventListener("click",getcharacter);
-console.log(Input.value.replace(/\s/g, '_'));
+
+
+buttonEl.addEventListener("click",getcharacter);
+
+//console.log(Input.value.replace(/\s/g, '_'));
