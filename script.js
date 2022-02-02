@@ -1,6 +1,6 @@
 let inputEl = document.getElementById('searchinput');
 let buttonEl = document.getElementById('searchBtn');
-let comicsEl = document.getElementById('comicpics');
+let comicsEl = document.getElementById('comicinfo');
 
 let characterimgEl= document.createElement("img");
 let comicimageEl1 = document.createElement("img");
@@ -118,6 +118,7 @@ function display(data,length) {
         p1.textContent= data.query.search[i].snippet
         comicsEl.appendChild(h1);
         comicsEl.appendChild(p1);
+      
     }
 }
 
