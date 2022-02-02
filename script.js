@@ -114,3 +114,4 @@ function display(data,length) {
 }
 
 buttonEl.addEventListener("click",getcharacter);
+console.log(Input.value.replace(/\s/g, '_'));
