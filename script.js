@@ -1,7 +1,6 @@
-let bodyEl = document.getElementById('test');
-let testinputEl = document.getElementById('test-input');
-let testbuttonEl = document.getElementById('test-button');
-let comicsEl = document.getElementById('comics');
+let inputEl = document.getElementById('searchinput');
+let buttonEl = document.getElementById('searchBtn');
+let comicsEl = document.getElementById('comicpics');
 
 let characterimgEl= document.createElement("img");
 let comicimageEl1 = document.createElement("img");
@@ -26,12 +25,11 @@ comicsEl.appendChild(comicimageEl8);
 comicsEl.appendChild(comicimageEl9);
 comicsEl.appendChild(comicimageEl10);
 
-bodyEl.appendChild(characterimgEl);
 
 console.log("code is working");
 
 function getcharacter(){
-    let input = testinputEl.value;
+    let input = inputEl.value;
     let url = "https://gateway.marvel.com/v1/public/characters?name=" + input + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
 
     fetch(url)
@@ -118,5 +116,8 @@ function display(data,length) {
     }
 }
 
-testbuttonEl.addEventListener("click",getcharacter);
+
+
+buttonEl.addEventListener("click",getcharacter);
+
 console.log(Input.value.replace(/\s/g, '_'));
