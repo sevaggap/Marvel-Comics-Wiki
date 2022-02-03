@@ -1,0 +1,49 @@
+body {
+    background-color:grey;
+    font-size:16px;
+   
+}
+#navigationbar {
+    background-color:rgb(31, 31, 18);
+}
+
+#headerbackgrnd {
+    background-color:burlywood;
+   
+}
+#history {
+
+   background-color:transparent;
+}
+#searchbar {
+    border:black solid 5px;
+    display:flex;
+ flex-direction:row-reverse;
+}
+
+
+
+
+
+img{height:200px;
+    max-width:130px;
+    padding:1px;
+    margin-left:9px;
+
+  }
+
+
+p {
+      display:block;
+      font-size:medium;
+      font-weight:bold;
+  }
+
+  h1 {
+      size:x-large;
+      color:rgb(255, 255, 255);
+      text-align: center;
+  }
+  .carousel-item > img {
+    margin: 0 auto;
+  }
