@@ -53,12 +53,13 @@ let history = [];
 
 console.log("code is working");
 
-function handleSearchFormSubmit () {
+function handleSearchFormSubmit (event) {
+    event.preventDefault()
     let character = inputEl.value;
-    console.log("in");
+    console.log(character);
 
     if (!character) {
-        setnoinput();
+        buttonEl.setAttribute("data-target", "#nocharacterfound");
         return;
     }
 
@@ -73,7 +74,7 @@ function handleSearchFormSubmit () {
     })
     .then (function (data) {
     if (!data.data.results[0]) {
-        setnocharacter();
+        buttonEl.setAttribute("data-target", "#nocharacterfound");
     } else {
         createlistelement(character);
         savetostorage(character);
@@ -81,13 +82,7 @@ function handleSearchFormSubmit () {
 })
 }
 
-function setnoinput() {
-    buttonEl.setAttribute("data-target", "#noinput");
-}
 
-function setnocharacter() {
-    buttonEl.setAttribute("data-target", "#nocharacterfound");
-}
 
 function handleHistoryFormSubmit(event) {
     event.preventDefault();
