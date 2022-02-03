@@ -1,15 +1,35 @@
-let bodyEl = document.getElementById('test');
-let testinputEl = document.getElementById('test-input');
-let testbuttonEl = document.getElementById('test-button');
+let inputEl = document.getElementById('searchinput');
+let buttonEl = document.getElementById('searchBtn');
+let comicsEl = document.getElementById('comicpics');
 
 let characterimgEl= document.createElement("img");
+let comicimageEl1 = document.createElement("img");
+let comicimageEl2 = document.createElement("img");
+let comicimageEl3 = document.createElement("img");
+let comicimageEl4 = document.createElement("img");
+let comicimageEl5 = document.createElement("img");
+let comicimageEl6 = document.createElement("img");
+let comicimageEl7 = document.createElement("img");
+let comicimageEl8 = document.createElement("img");
+let comicimageEl9 = document.createElement("img");
+let comicimageEl10 = document.createElement("img");
 
-bodyEl.appendChild(characterimgEl);
+comicsEl.appendChild(comicimageEl1);
+comicsEl.appendChild(comicimageEl2);
+comicsEl.appendChild(comicimageEl3);
+comicsEl.appendChild(comicimageEl4);
+comicsEl.appendChild(comicimageEl5);
+comicsEl.appendChild(comicimageEl6);
+comicsEl.appendChild(comicimageEl7);
+comicsEl.appendChild(comicimageEl8);
+comicsEl.appendChild(comicimageEl9);
+comicsEl.appendChild(comicimageEl10);
 
-console.log("hi");
+
+console.log("code is working");
 
 function getcharacter(){
-    let input = testinputEl.value;
+    let input = inputEl.value;
     let url = "https://gateway.marvel.com/v1/public/characters?name=" + input + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
 
     fetch(url)
@@ -21,13 +41,13 @@ function getcharacter(){
     })
     .then (function (data) {
         console.log(data);
+        console.log("getting character");
         let characterid = data.data.results[0].id;
-        let img = data.data.results[0].thumbnail.path
-        characterimgEl.setAttribute("src", img + ".jpg");
+        let charactername = data.data.results[0].name
 
         console.log(characterid);
-        searchwiki(input);
         getcomics(characterid);
+        searchwiki(charactername);
     }
     )
 }
@@ -45,11 +65,30 @@ function getcomics (characterid) {
     })
     .then (function (data) {
         console.log(data);
+        
+        comicimageEl1.setAttribute("src", data.data.results[0].thumbnail.path + ".jpg");
+        comicimageEl2.setAttribute("src", data.data.results[1].thumbnail.path + ".jpg");
+        comicimageEl3.setAttribute("src", data.data.results[2].thumbnail.path + ".jpg");
+        comicimageEl4.setAttribute("src", data.data.results[3].thumbnail.path + ".jpg");
+        comicimageEl5.setAttribute("src", data.data.results[4].thumbnail.path + ".jpg");
+        comicimageEl6.setAttribute("src", data.data.results[5].thumbnail.path + ".jpg");
+        comicimageEl7.setAttribute("src", data.data.results[6].thumbnail.path + ".jpg");
+        comicimageEl8.setAttribute("src", data.data.results[7].thumbnail.path + ".jpg");
+        comicimageEl9.setAttribute("src", data.data.results[8].thumbnail.path + ".jpg");
+        comicimageEl10.setAttribute("src", data.data.results[9].thumbnail.path + ".jpg");
+
+        for (i=0; i<10; i++ ) {
+            if(data.data.results[i].description) {
+                console.log(data.data.results[i].description);
+            }
+        }
+        return data;
     })
 }
 
-function searchwiki() {
-    let input = testinputEl.value;
+function searchwiki(charactername) {
+    let input = charactername;
+
     console.log(input);
     
      let url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + input + "&format=json" + "&origin=*";
@@ -74,12 +113,20 @@ function display(data,length) {
     console.log('hi');
     for(i=0;i<length;i++) {
         let h1 = document.createElement('h1');
+        let a1 = document.createElement('a');
         let p1 = document.createElement('p');
+        let url = "https://www.wikipedia.org/"+data.query.search[i].title.replace(/\s/g, '_')+"";
         h1.textContent= data.query.search[i].title;
-        p1.textContent= data.query.search[i].snippet
-        bodyEl.appendChild(h1);
-        bodyEl.appendChild(p1);
+        a1.textContent= url;
+        p1.textContent= data.query.search[i].snippet;
+        comicsEl.appendChild(h1);
+        comicsEl1.setAttribute("href", url);
+        comicsEl.appendChild(a1);
+        comicsEl.appendChild(p1);
     }
 }
 
-testbuttonEl.addEventListener("click",getcharacter);
+
+
+buttonEl.addEventListener("click",getcharacter);
+//console.log(Input.value.replace(/\s/g, '_'));
