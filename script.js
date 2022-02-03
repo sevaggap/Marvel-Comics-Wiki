@@ -1,6 +1,8 @@
 let inputEl = document.getElementById('searchinput');
 let buttonEl = document.getElementById('searchBtn');
 let comicsEl = document.getElementById('comicinfo');
+let historyEl = document.getElementById('searchhistory');
+
 
 let characterimgEl= document.createElement("img");
 let comicimageEl1 = document.createElement("img");
@@ -25,12 +27,57 @@ comicsEl.appendChild(comicimageEl8);
 comicsEl.appendChild(comicimageEl9);
 comicsEl.appendChild(comicimageEl10);
 
+let history = [];
 
 console.log("code is working");
 
-function getcharacter(){
-    let input = inputEl.value;
-    let url = "https://gateway.marvel.com/v1/public/characters?name=" + input + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
+function handleSearchFormSubmit (event) {
+    event.preventDefault();
+    let character = inputEl.value;
+
+    if (!character) {
+        window.alert('Please enter a character name!');
+        return;
+    }
+
+    let url = "https://gateway.marvel.com/v1/public/characters?name=" + character + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
+    
+    fetch(url)
+    .then (function (response){
+        if (!response.ok) {
+            throw response.json();
+        }
+        return response.json();
+    })
+    .then (function (data) {
+    if (!data.data.results[0]) {
+        window.alert("No character found! Please try again.")
+    } else {
+        createlistelement(character);
+        savetostorage(character);
+    }
+})
+}
+
+function handleHistoryFormSubmit(event) {
+    event.preventDefault();
+  
+    let character = event.target.textContent;
+    console.log(character);
+
+    getcharacter(character);
+}  
+
+function createlistelement (character) {
+    let buttoncharacterEl = document.createElement("button");
+    buttoncharacterEl.textContent = character;
+    historyEl.appendChild(buttoncharacterEl);
+
+    getcharacter(character);
+}
+
+function getcharacter(character){
+    let url = "https://gateway.marvel.com/v1/public/characters?name=" + character + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
 
     fetch(url)
     .then (function (response){
@@ -42,12 +89,16 @@ function getcharacter(){
     .then (function (data) {
         console.log(data);
         console.log("getting character");
+        if (!data.data.results[0]) {
+            window.alert("No character found! Please try again.")
+        } else {
         let characterid = data.data.results[0].id;
         let charactername = data.data.results[0].name
 
         console.log(characterid);
         searchwiki(charactername);
         getcomics(characterid);
+        }
     }
     )
 }
@@ -113,11 +164,48 @@ function display(data,length) {
     console.log('hi');
     for(i=0;i<length;i++) {
         let h1 = document.createElement('h1');
+        let a1 = document.createElement('a');
+        let p1 = document.createElement('p');
+        let url = "https://www.wikipedia.org/wiki/"+data.query.search[i].title.replace(/\s/g, '_')+"";
         h1.textContent= data.query.search[i].title;
+        a1.textContent= data.query.search[i].title;
+        p1.textContent= data.query.search[i].snippet;
         comicsEl.appendChild(h1);
+        comicsEl.appendChild(a1);
+        a1.setAttribute("href", url);
+        comicsEl.appendChild(p1);
     }
 }
 
-buttonEl.addEventListener("click",getcharacter);
+function savetostorage (charactername) {
+    history.push(charactername);
+    localStorage.setItem("searchhistory", JSON.stringify(history));
+}
 
-//console.log(Input.value.replace(/\s/g, '_'));
+function renderbuttons () {
+    for (var i = 0; i < history.length; i++) {
+        var historyelement = history[i];
+    
+        var button = document.createElement("button");
+        button.textContent = historyelement;
+
+        historyEl.appendChild(button);
+      }
+}
+
+function init() {
+    var storedhistory = JSON.parse(localStorage.getItem("searchhistory"));
+    
+    if (storedhistory !== null) {
+      history = storedhistory;
+    }
+   
+    renderbuttons();
+    
+    console.log("history loaded");
+  }
+
+  buttonEl.addEventListener("click",handleSearchFormSubmit);
+  historyEl.addEventListener("click",handleHistoryFormSubmit);
+
+  init();
