@@ -1,6 +1,6 @@
 let inputEl = document.getElementById('searchinput');
 let buttonEl = document.getElementById('searchBtn');
-let comicsEl = document.getElementById('comicpics');
+let comicsEl = document.getElementById('comicinfo');
 
 let characterimgEl= document.createElement("img");
 let comicimageEl1 = document.createElement("img");
