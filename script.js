@@ -3,6 +3,7 @@ let buttonEl = document.getElementById('searchBtn');
 let comicsEl = document.getElementById('comicinfo');
 let historyEl = document.getElementById('searchhistory');
 
+
 let characterimgEl= document.createElement("img");
 let comicimageEl1 = document.createElement("img");
 let comicimageEl2 = document.createElement("img");
