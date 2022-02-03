@@ -47,3 +47,7 @@ p {
   .carousel-item > img {
     margin: 0 auto;
   }
+
+.empty {
+    background-color: #808080;
+}
