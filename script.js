@@ -46,8 +46,8 @@ function getcharacter(){
         let charactername = data.data.results[0].name
 
         console.log(characterid);
-        getcomics(characterid);
         searchwiki(charactername);
+        getcomics(characterid);
     }
     )
 }
@@ -113,16 +113,10 @@ function display(data,length) {
     console.log('hi');
     for(i=0;i<length;i++) {
         let h1 = document.createElement('h1');
-        let p1 = document.createElement('p');
         h1.textContent= data.query.search[i].title;
-        p1.textContent= data.query.search[i].snippet
         comicsEl.appendChild(h1);
-        comicsEl.appendChild(p1);
-      
     }
 }
-
-
 
 buttonEl.addEventListener("click",getcharacter);
 
