@@ -4,7 +4,7 @@ body {
    
 }
 #navigationbar {
-    background-color:yellow;
+    background-color:rgb(31, 31, 18);
 }
 
 #headerbackgrnd {
@@ -41,6 +41,9 @@ p {
 
   h1 {
       size:x-large;
-      color:yellow;
-      
+      color:rgb(255, 255, 255);
+      text-align: center;
+  }
+  .carousel-item > img {
+    margin: 0 auto;
   }
