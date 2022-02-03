@@ -9,80 +9,64 @@
     <!-- Bootstrap Link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- My style sheet -->
+   
+     
+     
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+<link rel="stylesheet" href="styles.css">
     <title>Marvel Comics</title>
 </head>
 <body>
-    <header class="navbar">
+    <header class="navbar" id="navigationbar">
+        
         <section class="navbar-section">
-          <a href="..." class="navbar-brand mr-2">Marvel Wikipedia</a>
-          <a href="..." class="btn btn-link">Marvel API</a>
-          <a href="..." class="btn btn-link">Random Marvel Article!</a>
+          <a href="https://marvel.fandom.com/wiki/Marvel_Database" class="navbar-brand mr-2">Marvel Database</a>
+          <a href="https://developer.marvel.com/" class="btn btn-link">Marvel API</a>
+          <a href="https://perchance.org/marvel-film" class="btn btn-link">Watch a random marvel movie</a>
         </section>
         <section class="navbar-section">
 
         </section>
       </header>
-
-    <!-- Main heading -->
-    <div class="bg-dark pt-2 pb-2"> 
-        <div class="container">
-            <h1 class="text-center text-white">Marvel Search engine</h1>
+      <div class="row"id="headerbackgrnd"> 
+        <div class="container" >
+            <h1 class="text-center" id="headertitle">Marvel Search engine</h1>
         </div>
     </div>
-    <!-- End Main heading -->
-
-    <!-- Start container -->
     <div class="container-fluid"> 
 
       
         <div class="row"> 
 
           
-            <div class="col-lg-3 bg-light pt-3 pb-3"> 
+            <div class="col-4"id="inputarea"> 
 
-                <h5>Input name of a Marvel Hero</h5>
+                <h6>Input name of a Marvel Hero</h6>
 
                 <!-- Start input group -->
-                <div class="input-group mb-3"> 
+                <div class="input-group" id="searchbar"> 
                     <input id="searchinput" type="text" class="form-control" placeholder="Hero name..." class="input-group-append">
                     <button id="searchBtn" class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-search"></i></button>
                 </div>
+             
                 <!-- End input group -->   
-                Search History
+                Search History<div id="searcharea"></div>
                 <!-- Start card -->
-                <div class="card"> 
-                    <ul class="list-group list-group-flush list"><link>
-                    </ul>
-                   
-                </div> 
+                <div class="row" id="history"> <!-- id for the list for search?-->
+                    <ul id="searchhistory">
+                    </div>
+               </div>
+            <div class="container-fluid" id="comicinfo"></div></div>   
             
-           
-            </div> 
-           
+            </div>
+        </div>
 
-      
-            <div class="loading-col-lg-9"> 
-                <div id="comicinfo" class="mt-4">
-                   
-                   
-                </div>
-                <div class="col-lg-10"> 
-                    <div id="comicpics" class="mt-5">
-            </div> 
-        </div></div>
-        </div> 
-        
-
-
-      
-    </div> 
-  
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    
 </body>
+
+<script src="script.js"></script>
+<script src="jsScript.js"></script>
 </html>
