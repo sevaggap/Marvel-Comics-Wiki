@@ -10,7 +10,12 @@ body {
 }
 #navigationbar {
     background-color:rgb(31, 31, 18);
-    font-size: larger;
+    
+}
+
+#navigationbar .mr-2 {
+    font-size: 30px;
+    color: rgb(112, 103, 103);
 }
 
 #btn {
