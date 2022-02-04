@@ -29,12 +29,10 @@
     <header class="navbar" id="navigationbar">
         
         <section class="navbar-section" >
-          <a style = "color: rgb(233, 40, 40);" href="#" class="navbar-brand mr-2">Marvel Wiki</a>
-          <a style = "color: rgb(233, 40, 40);" href="https://marvel.fandom.com/wiki/Marvel_Database" class="btn btn-link">Database</a>
-          <a style = "color: rgb(233, 40, 40);" href="https://developer.marvel.com/" class="btn btn-link">API</a>
-          <a style = "color: rgb(233, 40, 40);" href="https://perchance.org/marvel-film" class="btn btn-link">Lets Watch! 	
-            &#127909;&#x1f37f;	 
-            </a>
+          <a href="#" id="btn" class="navbar-brand mr-2">Marvel Wiki</a>
+          <a href="https://marvel.fandom.com/wiki/Marvel_Database" id="btn" class="btn btn-link">Database</a>
+          <a href="https://developer.marvel.com/" id="btn" class="btn btn-link">API</a>
+          <a href="https://perchance.org/marvel-film" id="btn" class="btn btn-link">Lets Watch! &#127909;&#x1f37f;</a>
         </section>
 
 
@@ -87,7 +85,7 @@
 
     </header>
 
-    <div class="hero" style="background-image: url(imgs/marvel-characters_hero-02.jpg); background-repeat:no-repeat;">
+    <div class="hero">
         <div class="hero-sm">
           <h1 style="font-size: xxx-large;">MARVEL WIKI</h1>
           <p style ="text-align: center; font-size: larger;">your one-stop shop for all things Marvel!!</p>
@@ -95,11 +93,9 @@
     </div>
     
     <div class="container-fluid">
-        <!-- id for the list for search?-->
            <ul id="searchhistory">
     </div>
 
-     <!-- Start input group -->
      <div class="row">
         <div class="col-sm-5 col-md-5 col-lg-5">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -126,46 +122,44 @@
             </div>
         </div>
         
-        <div class="container-fluid col-sm-7 col-md-7 col-lg-7" id="comicinfo">
-            <h1 style="color: chocolate;">Wikipedia Search Results</h1> 
-            <a style = "color: black;" id="link1"></a> <br>
-            <a style = "color: black;" id="link2"></a> <br>
-            <a style = "color: black;" id="link3"></a> <br>
-            <a style = "color: black;" id="link4"></a> <br>
-            <a style = "color: black;" id="link5"></a> <br>
-            <a style = "color: black;" id="link6"></a> <br>
-            <a style = "color: black;" id="link7"></a> <br>
-            <a style = "color: black;" id="link8"></a> <br>
-            <a style = "color: black;" id="link9"></a> <br>
-            <a style = "color: black;" id="link10"></a><br>
+        <div class="container-fluid col-sm-6 col-md-6 col-lg-6" id="comicinfo">
+            <h1>Wikipedia Search Results</h1> 
+            <a id="link1"></a> <br>
+            <a id="link2"></a> <br>
+            <a id="link3"></a> <br>
+            <a id="link4"></a> <br>
+            <a id="link5"></a> <br>
+            <a id="link6"></a> <br>
+            <a id="link7"></a> <br>
+            <a id="link8"></a> <br>
+            <a id="link9"></a> <br>
+            <a id="link10"></a><br>
         
         </div>  
     </div>
     <br><br><br><br><br><br><br>
-    <div class="empty" style="background-color: rgb(255, 255, 255); ">
+    <div class="empty">
         <div class="empty-icon">
-          <i class="icon icon-3x icon-mail" style="color: black;"></i>
+          <i id="ic" class="icon icon-3x icon-mail"></i>
         </div>
-        <p class="empty-title h5" style="color: black;" >Join our Mailing List!</p>
-        <p class="empty-subtitle" style="color: black;" >Click below to get our latest updates!</p>
+        <p class="empty-title h5">Join our Mailing List!</p>
+        <p class="empty-subtitle">Click below to get our latest updates!</p>
         <div class="empty-action">
           <button class="btn btn-primary">Sign Up!</button>
         </div>
      
       </div>
             
-
-      
     <footer>
 
-        <div class="card" style="background-color:rgb(255, 255, 255); border-style: solid; border-color: black; border-width: medium;">
-            <div class="card-header" style = "color: black;">
+        <div class="card">
+            <div class="card-header">
               Quote
             </div>
-            <div class="card-body" style = "color: black;">
-              <blockquote class="blockquote mb-0" style = "color: black;">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
                 <p>"With great power comes great responsibility" </p>
-                <footer class="blockquote-footer" style = "color: black;">Uncle Ben <cite title="Source Title" style = "color: black;">Spiderman Chronicles</cite></footer>
+                <footer class="blockquote-footer">Uncle Ben<cite title="Source Title">Spiderman Chronicles</cite></footer>
               </blockquote>
             </div>
           </div>
