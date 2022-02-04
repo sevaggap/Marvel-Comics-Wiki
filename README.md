@@ -1,9 +1,9 @@
 # Marvel Comics Wiki
 
 ## Description
-The purpose of this project was to create an application using two servise side APIs. The project was left open-ended, and we were tasked with creating a user story to address a real-world problem.
+The purpose of this project was to create an application using two server-side APIs. The project was left open-ended, and we were tasked with creating a user story to address a real-world problem.
 
-We decided to create a Marvel Comics Wiki. The application takes user input, a character name, and uses the Marvel API to generate 10 comic books relating to the character. The application uses the Wikipedia API to search for Wikipedia pages realted to the character. These pages are not directly related to the comic books, and give the user more information about the chracters, movies with the characters, and actors/actresses that have played the character. The applicaiton also features a navigation bar with links to the Marvel API, Marvel Database, and a random movie generator which gives you a list of Marvel movies to watch!
+We decided to create a Marvel Comics Wiki. The application takes user input, a character name, and uses the Marvel API to generate 10 comic books relating to the character. The application uses the Wikipedia API to search for Wikipedia pages related to the character. These pages are not directly related to the comic books, and give the user more information about the characters, movies with the characters, and actors/actresses that have played the character. The application also features a navigation bar with links to the Marvel API, Marvel Database, and a random movie generator which gives you a list of Marvel movies to watch!
 
 The application uses several technologies, such as Spectre CSS Framework, Google Font API, Wikipedia API, Marvel API, jQuery, JavaScript, and Bootstrap.
 
