@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Font Awesome link-->
     <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
  
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -25,11 +28,11 @@
 
     <header class="navbar" id="navigationbar">
         
-        <section class="navbar-section">
-          <a href="#" class="navbar-brand mr-2">Marvel Wiki</a>
-          <a href="https://marvel.fandom.com/wiki/Marvel_Database" class="btn btn-link">Database</a>
-          <a href="https://developer.marvel.com/" class="btn btn-link">API</a>
-          <a href="https://perchance.org/marvel-film" class="btn btn-link">Lets Watch! 	
+        <section class="navbar-section" >
+          <a style = "color: rgb(233, 40, 40);" href="#" class="navbar-brand mr-2">Marvel Wiki</a>
+          <a style = "color: rgb(233, 40, 40);" href="https://marvel.fandom.com/wiki/Marvel_Database" class="btn btn-link">Database</a>
+          <a style = "color: rgb(233, 40, 40);" href="https://developer.marvel.com/" class="btn btn-link">API</a>
+          <a style = "color: rgb(233, 40, 40);" href="https://perchance.org/marvel-film" class="btn btn-link">Lets Watch! 	
             &#127909;&#x1f37f;	 
             </a>
         </section>
@@ -63,7 +66,7 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">No Characted Found!</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">No Character Found!</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -84,14 +87,14 @@
 
     </header>
 
-    <div class="hero bg-dark">
+    <div class="hero" style="background-image: url(imgs/marvel-characters_hero-02.jpg);">
         <div class="hero-sm">
           <h1>MARVEL WIKI</h1>
           <p style ="text-align: center;">your one-stop shop for all things Marvel!!</p>
         </div>
     </div>
     
-    <div class="row" id="history">
+    <div class="container-fluid">
         <!-- id for the list for search?-->
            <ul id="searchhistory">
     </div>
@@ -123,22 +126,23 @@
             </div>
         </div>
         
-        <div class="col-7" id="comicinfo">
-            <h1>Wikipedia Search Results</h1>
-            <a id="link1"></a> <br>
-            <a id="link2"></a> <br>
-            <a id="link3"></a> <br>
-            <a id="link4"></a> <br>
-            <a id="link5"></a> <br>
-            <a id="link6"></a> <br>
-            <a id="link7"></a> <br>
-            <a id="link8"></a> <br>
-            <a id="link9"></a> <br>
-            <a id="link10"></a> <br>
+        <div class="container-fluid col-7" id="comicinfo">
+            <h1 style="color: chocolate;">Wikipedia Search Results</h1> 
+            <a style = "color: black;" id="link1"></a> <br>
+            <a style = "color: black;" id="link2"></a> <br>
+            <a style = "color: black;" id="link3"></a> <br>
+            <a style = "color: black;" id="link4"></a> <br>
+            <a style = "color: black;" id="link5"></a> <br>
+            <a style = "color: black;" id="link6"></a> <br>
+            <a style = "color: black;" id="link7"></a> <br>
+            <a style = "color: black;" id="link8"></a> <br>
+            <a style = "color: black;" id="link9"></a> <br>
+            <a style = "color: black;" id="link10"></a><br>
+        
         </div>  
     </div>
     <br><br><br><br><br><br><br>
-    <div class="empty" style="background-color: #808080;">
+    <div class="empty" style="background-color: rgb(255, 255, 255); ">
         <div class="empty-icon">
           <i class="icon icon-3x icon-mail" style="color: black;"></i>
         </div>
@@ -152,7 +156,21 @@
             
 
       
-            
+    <footer>
+
+        <div class="card" style="background-color:rgb(255, 255, 255); border-style: solid; border-color: black; border-width: medium;">
+            <div class="card-header" style = "color: black;">
+              Quote
+            </div>
+            <div class="card-body" style = "color: black;">
+              <blockquote class="blockquote mb-0" style = "color: black;">
+                <p>"With great power comes great responsibility" </p>
+                <footer class="blockquote-footer" style = "color: black;">Uncle Ben <cite title="Source Title" style = "color: black;">Spiderman Chronicles</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+
+    </footer>
    
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
