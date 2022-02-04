@@ -245,6 +245,7 @@ function renderbuttons () {
         button.textContent = historyelement;
 
         historyEl.appendChild(button);
+        
       }
 }
 
@@ -265,5 +266,3 @@ function init() {
 
   init();
 
-
-  

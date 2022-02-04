@@ -61,3 +61,7 @@ p {
     
 }
 
+#searchhistory > button {
+    margin-left: 15px;
+    border-radius: 12px;
+}
