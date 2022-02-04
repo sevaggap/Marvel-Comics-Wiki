@@ -19,7 +19,7 @@ The following image shows the web application's appearance and functionality:
 Uoft SCS Coding Bootcamp Gitlab, Marvel API, Wikipedia API
 
 ## License
-Copyright [2021] [Sevag Gaprielian]
+Copyright [2021] [Sevag Gaprielian] [Raman Singh] [Navraj Dhaliwal] [Jaskamalpreet Singh]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
