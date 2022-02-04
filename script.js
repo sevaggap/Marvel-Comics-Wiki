@@ -27,10 +27,75 @@ comicsEl.appendChild(comicimageEl10);
 
 
 console.log("code is working");
+<<<<<<< Updated upstream
 
 function getcharacter(){
     let input = inputEl.value;
     let url = "https://gateway.marvel.com/v1/public/characters?name=" + input + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
+=======
+hide()
+function handleSearchFormSubmit (event) {
+    event.preventDefault()
+    let character = inputEl.value;
+    console.log(character);
+
+    if (!character) {
+        buttonEl.setAttribute("data-target", "#nocharacterfound");
+        return;
+    }
+
+    let url = "https://gateway.marvel.com/v1/public/characters?name=" + character + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
+    
+    fetch(url)
+    .then (function (response){
+        if (!response.ok) {
+            throw response.json();
+        }
+        return response.json();
+    })
+    .then (function (data) {
+    if (!data.data.results[0]) {
+        buttonEl.setAttribute("data-target", "#nocharacterfound");
+    } else {
+        createlistelement(character);
+        savetostorage(character);
+    }
+})
+}
+function hide() {
+    document.getElementById("searchresults").style.display="none";
+    document.getElementById("carouselExampleControls").style.display="none";
+    
+}
+function show() {
+   
+        document.getElementById("searchresults").style.display="block";
+        document.getElementById("carouselExampleControls").style.display="block";
+    }
+    
+
+
+
+function handleHistoryFormSubmit(event) {
+    event.preventDefault();
+  
+    let character = event.target.textContent;
+    console.log(character);
+
+    getcharacter(character);
+}  
+
+function createlistelement (character) {
+    let buttoncharacterEl = document.createElement("button");
+    buttoncharacterEl.textContent = character;
+    historyEl.appendChild(buttoncharacterEl);
+
+    getcharacter(character);
+}
+
+function getcharacter(character){
+    let url = "https://gateway.marvel.com/v1/public/characters?name=" + character + "&ts=1&apikey=ce7dc3068a067b90ca1a1447d548210b&hash=1125c2f57d6d048e87c706fdffbe8ae6";
+>>>>>>> Stashed changes
 
     fetch(url)
     .then (function (response){
@@ -110,6 +175,7 @@ function searchwiki(charactername) {
 }
 
 function display(data,length) {
+    show();
     console.log('hi');
     for(i=0;i<length;i++) {
         let h1 = document.createElement('h1');
@@ -118,6 +184,37 @@ function display(data,length) {
     }
 }
 
+<<<<<<< Updated upstream
 buttonEl.addEventListener("click",getcharacter);
+=======
+function renderbuttons () {
+    for (var i = 0; i < history.length; i++) {
+        var historyelement = history[i];
+    
+        var button = document.createElement("button");
+        button.textContent = historyelement;
+
+        historyEl.appendChild(button);
+      }
+}
+
+function init() {
+    var storedhistory = JSON.parse(localStorage.getItem("searchhistory"));
+    
+    if (storedhistory !== null) {
+      history = storedhistory;
+    }
+   
+    renderbuttons();
+    
+    console.log("history loaded");
+  }
+
+  buttonEl.addEventListener("click",handleSearchFormSubmit);
+  historyEl.addEventListener("click",handleHistoryFormSubmit);
+  
+  init();
+
+>>>>>>> Stashed changes
 
 //console.log(Input.value.replace(/\s/g, '_'));

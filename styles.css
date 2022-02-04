@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body {
     background-color:grey;
     font-size:16px;
@@ -6,41 +7,195 @@ body {
 #navigationbar {
     background-color:yellow;
 }
+=======
+/* ----------- iPhone X ----------- */
+/*make image not go crazy when resizing*/
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+      img {
+          display:block;
+          max-width:150px;
+          max-height:300px;
+          min-width:100px;
+          min-height:250px;
+          
+      }
+>>>>>>> Stashed changes
 
-#headerbackgrnd {
-    background-color:burlywood;
+}
+
+
+
+
+
+
+
+body {
+    background-color:rgb(104, 49, 49);
+    font-size:16px;
    
 }
-#history {
+                /* navigation bar background color*/
+                #navigationbar {
+                    background-color:rgb(31, 31, 18);
+                    padding-left:15px;
+                    padding-right:15px;
+                    
+                }
 
-   background-color:transparent;
-}
-#searchbar {
-    border:black solid 5px;
-    display:flex;
- flex-direction:row-reverse;
-}
+                    /* get rid of list bullets and center the list of results*/
+                    li {
+                        list-style-type:none;
+                        text-align:center;
+                    }
 
+                            /* align header titles and stlye and subheading for main title*/
+                            p#onestop {
+                                    text-align:center;
+                                    font-style:italic;
+                                    color:rgb(231, 22, 22)
+                                }
+                            h1 {
+                                    size:x-large;
+                                    color:rgb(255, 102, 102);
+                                    text-align: center;
+                            }
+                                                /*carousal positioning*/
+                                                .carousel-item > img {
+                                                    margin: 0 auto;
+                                                }
+                                                .empty {
+                                                    background-color: rgb(104, 49, 49);
+                                                }
 
-
-
-
-img{height:200px;
-    max-width:130px;
-    padding:1px;
-    margin-left:9px;
-
-  }
-
-
-p {
-      display:block;
-      font-size:medium;
-      font-weight:bold;
-  }
-
+<<<<<<< Updated upstream
   h1 {
       size:x-large;
       color:yellow;
       
   }
+=======
+                                                        /* link styling for search results*/
+                                                        a#link1 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link2 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link3 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link4 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link5 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link6 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link7 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link8 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link9 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a#link10 {
+                                                            color:rgb(231, 185, 177)
+                                                        }
+                                                        a:hover#link1 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link2 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link3 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link4 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link5{
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link6 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link7 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link8 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link9 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:hover#link10 {
+                                                            color:lightblue;
+                                                            border:2px dotted rgb(17, 0, 255);
+                                                            font-weight:bold;
+                                                        }
+                                                        a:active#link10 {
+                                                            font-weight:900;
+                                                          }
+                                                       
+
+                                                                /* get rid of white bckground on carousel*/
+                                                                div#carouselExampleControls.carousel.slide{
+                                                                    background-color:transparent;
+                                                                }
+
+                                                                    /* added id in footer to stick to bottom, dont put position absolute or else loaded picture will go into footer*/
+                                                                            #footerid {
+                                                                                margin-top:35px;
+                                                                                bottom:0;
+                                                                                width:100%;
+                                                                        }
+
+                                                                          /* search history styling */
+                                                                                    div#history.row {
+                                                                                        background-color:transparent;
+                                                                                        border:3px dotted rgb(31, 31, 18);
+                                                                                        text-align:center;
+                                                                                        justify-content:center;
+                                                                                        size:65%;
+                                                                                        margin-bottom:5%;
+                                                                                        color:black;
+                                                                                    }
+                                                                                         /* search history styling */
+
+                                                                                            button {
+                                                                                            background-color:rgb(39, 21, 21);
+                                                                                            color:rgb(151, 151, 31);
+                                                                                            margin-left:5px;
+                                                                                            margin-right:5px;
+                                                                                        }
+                                                                                            button:hover {
+                                                                                                color:rgb(39, 21, 21);
+                                                                                                background-color:rgb(151, 151, 31);
+                                                                                            }
+>>>>>>> Stashed changes
