@@ -56,7 +56,7 @@ body {
 .hero {
     width: 100%;
     height: 350px;
-    background-image: url("/imgs/marvel-characters_hero-02.jpg");
+    background-image: url('imgs/marvel-characters_hero-02.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -105,3 +105,11 @@ p {
     border-radius: 10px;
 }
 
+.hero-sm {
+   text-align: center; 
+   font-size: larger;
+}
+
+.hero-sm .h1{
+    font-size: xx-large;
+}
