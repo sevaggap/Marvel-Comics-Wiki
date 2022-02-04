@@ -1,10 +1,16 @@
+*{
+    font-family: 'Bangers', cursive;
+
+}
+
 body {
-    background-color:grey;
+    background-color:rgb(255, 255, 255);
     font-size:16px;
    
 }
 #navigationbar {
     background-color:rgb(31, 31, 18);
+    font-size: larger;
 }
 
 #headerbackgrnd {
@@ -47,3 +53,11 @@ p {
   .carousel-item > img {
     margin: 0 auto;
   }
+
+#comicinfo {
+        border-width:5px;  
+        border-style:double;
+        line-height: 2.5;
+    
+}
+

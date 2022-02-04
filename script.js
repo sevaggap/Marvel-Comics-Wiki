@@ -54,11 +54,12 @@ let history = [];
 console.log("code is working");
 
 function handleSearchFormSubmit (event) {
-    event.preventDefault();
+    event.preventDefault()
     let character = inputEl.value;
+    console.log(character);
 
     if (!character) {
-        window.alert('Please enter a character name!');
+        buttonEl.setAttribute("data-target", "#nocharacterfound");
         return;
     }
 
@@ -73,13 +74,15 @@ function handleSearchFormSubmit (event) {
     })
     .then (function (data) {
     if (!data.data.results[0]) {
-        window.alert("No character found! Please try again.")
+        buttonEl.setAttribute("data-target", "#nocharacterfound");
     } else {
         createlistelement(character);
         savetostorage(character);
     }
 })
 }
+
+
 
 function handleHistoryFormSubmit(event) {
     event.preventDefault();
@@ -263,3 +266,8 @@ function init() {
   historyEl.addEventListener("click",handleHistoryFormSubmit);
 
   init();
+
+
+
+  
+

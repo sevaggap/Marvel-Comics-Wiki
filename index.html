@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Font Awesome link-->
     <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
  
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,19 +17,22 @@
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="styles.css">
     <title>Marvel Comics</title>
+ 
 </head>
 
 <body>
 
     <header class="navbar" id="navigationbar">
         
-        <section class="navbar-section">
-          <a href="https://marvel.fandom.com/wiki/Marvel_Database" class="navbar-brand mr-2">Marvel Database</a>
-          <a href="https://developer.marvel.com/" class="btn btn-link">Marvel API</a>
-          <a href="https://perchance.org/marvel-film" class="btn btn-link">Lets Watch! 	
+        <section class="navbar-section" >
+          <a style = "color: rgb(233, 40, 40);" href="#" class="navbar-brand mr-2">Marvel Wiki</a>
+          <a style = "color: rgb(233, 40, 40);" href="https://marvel.fandom.com/wiki/Marvel_Database" class="btn btn-link">Database</a>
+          <a style = "color: rgb(233, 40, 40);" href="https://developer.marvel.com/" class="btn btn-link">API</a>
+          <a style = "color: rgb(233, 40, 40);" href="https://perchance.org/marvel-film" class="btn btn-link">Lets Watch! 	
             &#127909;&#x1f37f;	 
             </a>
         </section>
@@ -34,29 +40,68 @@
 
         <section class="navbar-section">
             <div class="input-group input-inline">
-              <input class="form-input" type="text" placeholder="Search Character Name!">
-              <button id="searchBtn" type="button" id="button-addon2"><i class="far fa-search"></i></button>
+              <input id = "tags" class="form-input"type="text" placeholder="Search Character Name!">
+              <button class="c-hand" id="searchBtn" type="button" id="button-addon2" data-toggle="modal"><i class="far fa-search"></i></button>
+
+              <div class="modal fade" id="noinput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">No Character Entered!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h6>Please enter a Marvel character name.</h6>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="nocharacterfound" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">No Character Found!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <h6>Please ensure your character name is spelled correctly and try again.</h6>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
         </section>
 
 
     </header>
 
-    <div class="hero bg-dark">
+    <div class="hero" style="background-image: url(imgs/marvel-characters_hero-02.jpg);">
         <div class="hero-sm">
-          <h1>MARVEL WIKI</h1>
-          <p style ="text-align: center;">your one-stop shop for all things Marvel!!</p>
+          <h1 style="font-size: xxx-large;">MARVEL WIKI</h1>
+          <p style ="text-align: center; font-size: larger;">your one-stop shop for all things Marvel!!</p>
         </div>
     </div>
     
-    <div class="row" id="history">
+    <div class="container-fluid">
         <!-- id for the list for search?-->
            <ul id="searchhistory">
     </div>
 
      <!-- Start input group -->
      <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-5 col-md-5 col-lg-5">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                 <div class="carousel-item active" id="item-1"></div>
@@ -80,25 +125,55 @@
             </a>
             </div>
         </div>
-        <div class="col-md-8" id="comicinfo">
-            <h1>Wikipedia Search Results</h1>
-            <a id="link1"></a> <br>
-            <a id="link2"></a> <br>
-            <a id="link3"></a> <br>
-            <a id="link4"></a> <br>
-            <a id="link5"></a> <br>
-            <a id="link6"></a> <br>
-            <a id="link7"></a> <br>
-            <a id="link8"></a> <br>
-            <a id="link9"></a> <br>
-            <a id="link10"></a> <br>
+        
+        <div class="container-fluid col-sm-7 col-md-7 col-lg-7" id="comicinfo">
+            <h1 style="color: chocolate;">Wikipedia Search Results</h1> 
+            <a style = "color: black;" id="link1"></a> <br>
+            <a style = "color: black;" id="link2"></a> <br>
+            <a style = "color: black;" id="link3"></a> <br>
+            <a style = "color: black;" id="link4"></a> <br>
+            <a style = "color: black;" id="link5"></a> <br>
+            <a style = "color: black;" id="link6"></a> <br>
+            <a style = "color: black;" id="link7"></a> <br>
+            <a style = "color: black;" id="link8"></a> <br>
+            <a style = "color: black;" id="link9"></a> <br>
+            <a style = "color: black;" id="link10"></a><br>
+        
         </div>  
     </div>
-    
+    <br><br><br><br><br><br><br>
+    <div class="empty" style="background-color: rgb(255, 255, 255); ">
+        <div class="empty-icon">
+          <i class="icon icon-3x icon-mail" style="color: black;"></i>
+        </div>
+        <p class="empty-title h5" style="color: black;" >Join our Mailing List!</p>
+        <p class="empty-subtitle" style="color: black;" >Click below to get our latest updates!</p>
+        <div class="empty-action">
+          <button class="btn btn-primary">Sign Up!</button>
+        </div>
+     
+      </div>
             
-            
-   
 
+      
+    <footer>
+
+        <div class="card" style="background-color:rgb(255, 255, 255); border-style: solid; border-color: black; border-width: medium;">
+            <div class="card-header" style = "color: black;">
+              Quote
+            </div>
+            <div class="card-body" style = "color: black;">
+              <blockquote class="blockquote mb-0" style = "color: black;">
+                <p>"With great power comes great responsibility" </p>
+                <footer class="blockquote-footer" style = "color: black;">Uncle Ben <cite title="Source Title" style = "color: black;">Spiderman Chronicles</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+
+    </footer>
+   
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
